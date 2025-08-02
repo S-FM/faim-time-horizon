@@ -27,7 +27,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center max-w-4xl">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Foundation AI Models
+            <span className="font-extrabold">F</span><span className="font-extrabold">AI</span><span className="font-extrabold">M</span> - your inference provider for structured <span className="font-extrabold">F</span>oundation <span className="font-extrabold">AI</span> <span className="font-extrabold">M</span>odels
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Inference providers for foundation models in structured data domains. 
@@ -127,8 +127,11 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t py-8 px-4 bg-background">
         <div className="container mx-auto text-center">
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-2">
             © 2024 FAIM - Foundation AI Models. Building the future of structured data inference.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Contact us: <a href="mailto:support@faim.it.com" className="text-primary hover:underline">support@faim.it.com</a>
           </p>
         </div>
       </footer>
