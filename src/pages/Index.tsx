@@ -34,10 +34,6 @@ const Index = () => {
               Your inference provider for structured <span className="font-bold text-primary">Foundation AI Models</span>
             </p>
           </div>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Inference providers for foundation models in structured data domains. 
-            Specialized in time-series analysis with cutting-edge AI models.
-          </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Badge variant="secondary" className="px-4 py-2">
               <Clock className="h-4 w-4 mr-2" />
