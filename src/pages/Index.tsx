@@ -26,9 +26,14 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            <span className="font-extrabold">F</span><span className="font-extrabold">AI</span><span className="font-extrabold">M</span> - your inference provider for structured <span className="font-extrabold">F</span>oundation <span className="font-extrabold">AI</span> <span className="font-extrabold">M</span>odels
-          </h1>
+          <div className="mb-6">
+            <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="font-extrabold">F</span><span className="font-extrabold">AI</span><span className="font-extrabold">M</span>
+            </h1>
+            <p className="text-2xl font-semibold text-foreground">
+              Your inference provider for structured <span className="font-bold text-primary">Foundation AI Models</span>
+            </p>
+          </div>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Inference providers for foundation models in structured data domains. 
             Specialized in time-series analysis with cutting-edge AI models.
