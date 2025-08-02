@@ -1,22 +1,14 @@
-# Welcome to your Lovable project
+# FAIM - Foundation AI Models for structured data
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/c2436df3-ee3b-4cca-ace3-e4bd02fbd49c
+**Live Site**: https://faim.it.com
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/c2436df3-ee3b-4cca-ace3-e4bd02fbd49c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+You can work locally using your own IDE and push changes to deploy automatically.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +54,18 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/c2436df3-ee3b-4cca-ace3-e4bd02fbd49c) and click on Share -> Publish.
+This project automatically deploys to GitHub Pages when you push changes to the main branch.
 
-## Can I connect a custom domain to my Lovable project?
+1. Make your changes
+2. Commit and push:
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin main
+   ```
+3. GitHub Actions will build and deploy automatically
+4. Your changes will be live at https://faim.it.com in ~2-5 minutes
 
-Yes, you can!
+## Domain Configuration
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is configured with a custom domain (faim.it.com) pointing to GitHub Pages with automatic HTTPS.
