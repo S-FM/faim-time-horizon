@@ -129,7 +129,7 @@ const Index = () => {
       <footer className="border-t py-8 px-4 bg-background">
         <div className="container mx-auto text-center">
           <p className="text-muted-foreground mb-2">
-            © 2024 FAIM - Foundation AI Models. Building the future of structured data inference.
+            © 2025 FAIM - Foundation AI Models for structured data. Building the future of structured data inference.
           </p>
           <p className="text-muted-foreground text-sm">
             Contact us: <a href="mailto:support@faim.it.com" className="text-primary hover:underline">support@faim.it.com</a>
