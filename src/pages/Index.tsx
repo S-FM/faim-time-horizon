@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, TrendingUp, Zap, Users } from "lucide-react";
+import { Clock, TrendingUp, Zap, Users, Code, Terminal, Copy, ExternalLink } from "lucide-react";
 
 const Index = () => {
   return (
@@ -91,6 +91,183 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Python Client Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-primary/5 to-purple-600/5">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
+              <Terminal className="h-8 w-8 text-primary" />
+            </div>
+            <h2 className="text-4xl font-bold mb-4">
+              Run Foundation Models with{" "}
+              <span className="text-primary">One Line of Code</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Skip the complexity. Our Python client gives you instant access to state-of-the-art 
+              time-series foundation models. No setup, no training, just results.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Code Example */}
+            <div className="order-2 lg:order-1">
+              <Card className="bg-slate-900 text-slate-100 border-primary/20">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <Terminal className="h-5 w-5 text-green-400" />
+                      <span className="text-sm font-medium">Python</span>
+                    </div>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="text-slate-400 hover:text-slate-100"
+                      onClick={() => navigator.clipboard.writeText(`from tsfm_client import TSFMClient
+
+client = TSFMClient(api_key="your_key")
+forecast = client.predict(data=[1,2,3,4,5], forecast_horizon=3)
+print(forecast.forecast)`)}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="font-mono text-sm space-y-2">
+                    <div>
+                      <span className="text-purple-400">from</span>{" "}
+                      <span className="text-blue-300">tsfm_client</span>{" "}
+                      <span className="text-purple-400">import</span>{" "}
+                      <span className="text-yellow-300">TSFMClient</span>
+                    </div>
+                    <div className="text-slate-400"># Initialize client</div>
+                    <div>
+                      <span className="text-blue-300">client</span>{" "}
+                      <span className="text-purple-400">=</span>{" "}
+                      <span className="text-yellow-300">TSFMClient</span>
+                      <span className="text-slate-400">(</span>
+                      <span className="text-green-300">api_key</span>
+                      <span className="text-purple-400">=</span>
+                      <span className="text-orange-300">"your_key"</span>
+                      <span className="text-slate-400">)</span>
+                    </div>
+                    <div className="text-slate-400"># Get predictions instantly</div>
+                    <div>
+                      <span className="text-blue-300">forecast</span>{" "}
+                      <span className="text-purple-400">=</span>{" "}
+                      <span className="text-blue-300">client</span>
+                      <span className="text-slate-400">.</span>
+                      <span className="text-yellow-300">predict</span>
+                      <span className="text-slate-400">(</span>
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-green-300">data</span>
+                      <span className="text-purple-400">=</span>
+                      <span className="text-slate-400">[</span>
+                      <span className="text-orange-300">1,2,3,4,5</span>
+                      <span className="text-slate-400">],</span>
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-green-300">forecast_horizon</span>
+                      <span className="text-purple-400">=</span>
+                      <span className="text-orange-300">3</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">)</span>
+                    </div>
+                    <div>
+                      <span className="text-purple-400">print</span>
+                      <span className="text-slate-400">(</span>
+                      <span className="text-blue-300">forecast</span>
+                      <span className="text-slate-400">.</span>
+                      <span className="text-green-300">forecast</span>
+                      <span className="text-slate-400">)</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Features */}
+            <div className="order-1 lg:order-2">
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Zap className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Zero Configuration</h3>
+                    <p className="text-muted-foreground">
+                      No model training, no infrastructure setup. Just install and start forecasting 
+                      with production-ready foundation models.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Enterprise-Grade Accuracy</h3>
+                    <p className="text-muted-foreground">
+                      Leverage state-of-the-art Chronos and Toto models trained on massive datasets 
+                      for superior forecasting performance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Code className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Developer-Friendly</h3>
+                    <p className="text-muted-foreground">
+                      Intuitive Python API with support for multivariate time series forecasting and confidence interval estimation.
+                      Ideal for data scientists and engineers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <div className="mb-6">
+              <div className="inline-flex items-center gap-3 bg-slate-900 text-slate-100 px-6 py-4 rounded-lg border border-primary/20 mb-4">
+                <Terminal className="h-5 w-5 text-green-400" />
+                <code className="text-lg font-mono">pip install tsfm-client</code>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="text-slate-400 hover:text-slate-100"
+                  onClick={() => navigator.clipboard.writeText('pip install tsfm-client')}
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Get started in seconds with one command
+              </p>
+            </div>
+            
+            <Button size="lg" variant="outline" className="text-lg px-8" asChild>
+              <a 
+                href="https://pypi.org/project/tsfm-client/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
+              >
+                <ExternalLink className="h-5 w-5 mr-2" />
+                View Documentation & Examples
+              </a>
+            </Button>
           </div>
         </div>
       </section>

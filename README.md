@@ -66,6 +66,70 @@ This project automatically deploys to GitHub Pages when you push changes to the 
 3. GitHub Actions will build and deploy automatically
 4. Your changes will be live at https://faim.it.com in ~2-5 minutes
 
+## Python Client for Time Series Forecasting
+
+The FAIM models can be accessed programmatically using the `tsfm-client` Python package, which provides a convenient interface for time series forecasting with foundation models.
+
+### Installation
+
+```bash
+pip install tsfm-client
+```
+
+### Requirements
+
+- Python >= 3.10
+- Valid TSFM API key
+- Dependencies: numpy, pandas, httpx, pydantic
+
+### Basic Usage
+
+```python
+import os
+import numpy as np
+from tsfm_client import TSFMClient
+
+# Set your API key
+os.environ['TSFM_API_KEY'] = 'your_api_key_here'
+client = TSFMClient(api_key=os.getenv('TSFM_API_KEY'))
+
+# Prepare your time series data
+data = np.array([10, 12, 13, 15, 17, 16, 18, 20, 22, 25])
+
+# Generate forecasts with confidence intervals
+response = client.predict(
+    data=data,
+    forecast_horizon=5,  # Predict next 5 time steps
+    num_samples=100,     # Number of samples for confidence intervals
+    confidence_intervals=[0.8, 0.95]  # 80% and 95% confidence intervals
+)
+
+# Access the results
+print("Forecasts:", response.forecasts)
+print("Confidence intervals:", response.confidence_intervals)
+```
+
+### Supported Models
+
+- **chronos-t5-small**: Optimized for quick predictions
+- **toto-open-base-1.0**: Advanced model for complex time series
+
+### Input Formats
+
+The client supports multiple input formats:
+- NumPy arrays
+- Python lists
+- Pandas Series (univariate)
+- Pandas DataFrame (multivariate)
+
+### Features
+
+- ✅ Univariate and multivariate time series forecasting
+- ✅ Confidence interval generation
+- ✅ Multiple forecast horizons
+- ✅ Foundation model-based predictions
+- ✅ Easy integration with existing Python workflows
+
 ## Domain Configuration
 
 This project is configured with a custom domain (faim.it.com) pointing to GitHub Pages with automatic HTTPS.
