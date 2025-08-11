@@ -51,50 +51,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Current Models Section */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Currently Supported Models</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-primary/20 hover:border-primary/40 transition-colors">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Clock className="h-6 w-6 mr-2 text-primary" />
-                  Chronos
-                </CardTitle>
-                <CardDescription>
-                  Advanced time-series foundation model for forecasting and analysis
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Zero-shot inference capabilities for various time-series tasks including 
-                  forecasting, anomaly detection, and pattern recognition.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20 hover:border-primary/40 transition-colors">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <TrendingUp className="h-6 w-6 mr-2 text-primary" />
-                  Toto
-                </CardTitle>
-                <CardDescription>
-                  State-of-the-art time-series foundation model for complex patterns
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Specialized in handling complex temporal dependencies and 
-                  multi-variate time-series analysis with high accuracy.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Python Client Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-primary/5 to-purple-600/5">
         <div className="container mx-auto max-w-6xl">
@@ -103,8 +59,8 @@ const Index = () => {
               <Terminal className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-4xl font-bold mb-4">
-              Run Foundation Models with{" "}
-              <span className="text-primary">One Line of Code</span>
+              Get Your Time Series Forecast in{" "}
+              <span className="text-primary">Seconds</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Skip the complexity. Our Python client gives you instant access to state-of-the-art 
@@ -129,7 +85,7 @@ const Index = () => {
                       onClick={() => navigator.clipboard.writeText(`from tsfm_client import TSFMClient
 
 client = TSFMClient(api_key="your_key")
-forecast = client.predict(data=[1,2,3,4,5], forecast_horizon=3)
+forecast = client.predict(data=your_data, forecast_horizon=24)
 print(forecast.forecast)`)}
                     >
                       <Copy className="h-4 w-4" />
@@ -167,14 +123,13 @@ print(forecast.forecast)`)}
                     <div className="ml-4">
                       <span className="text-green-300">data</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-slate-400">[</span>
-                      <span className="text-orange-300">1,2,3,4,5</span>
-                      <span className="text-slate-400">],</span>
+                      <span className="text-blue-300">your_data</span>
+                      <span className="text-slate-400">,</span>
                     </div>
                     <div className="ml-4">
                       <span className="text-green-300">forecast_horizon</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-orange-300">3</span>
+                      <span className="text-orange-300">24</span>
                     </div>
                     <div>
                       <span className="text-slate-400">)</span>
@@ -252,9 +207,6 @@ print(forecast.forecast)`)}
                   <Copy className="h-4 w-4" />
                 </Button>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Get started in seconds with one command
-              </p>
             </div>
             
             <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -268,6 +220,83 @@ print(forecast.forecast)`)}
                 View Documentation & Examples
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Features */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-4">Coming Soon</h2>
+          <p className="text-lg text-muted-foreground mb-12">
+            We're constantly expanding FAIM's capabilities. Here's what's on the horizon:
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="flex items-start justify-center space-x-3">
+              <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Zap className="h-4 w-4 text-primary" />
+              </div>
+              <div className="text-left">
+                <h4 className="font-semibold">Fine-tuning</h4>
+                <p className="text-sm text-muted-foreground">Custom model training on your data</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start justify-center space-x-3">
+              <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <TrendingUp className="h-4 w-4 text-primary" />
+              </div>
+              <div className="text-left">
+                <h4 className="font-semibold">Tabular Forecasting</h4>
+                <p className="text-sm text-muted-foreground">Zero shot predictions for your regression and classification tasks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Current Models Section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Currently Supported Models</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer" onClick={() => window.open('https://huggingface.co/amazon/chronos-t5-small', '_blank')}>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Clock className="h-6 w-6 mr-2 text-primary" />
+                  Chronos
+                  <ExternalLink className="h-4 w-4 ml-2 text-muted-foreground" />
+                </CardTitle>
+                <CardDescription>
+                  Advanced time-series foundation model for forecasting and analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Zero-shot inference capabilities for various time-series tasks including 
+                  forecasting, anomaly detection, and pattern recognition.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer" onClick={() => window.open('https://huggingface.co/Datadog/Toto-Open-Base-1.0', '_blank')}>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <TrendingUp className="h-6 w-6 mr-2 text-primary" />
+                  Toto
+                  <ExternalLink className="h-4 w-4 ml-2 text-muted-foreground" />
+                </CardTitle>
+                <CardDescription>
+                  State-of-the-art time-series foundation model for complex patterns
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Specialized in handling complex temporal dependencies and 
+                  multi-variate time-series analysis with high accuracy.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
