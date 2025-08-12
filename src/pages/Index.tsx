@@ -209,15 +209,15 @@ print(forecast.forecast)`)}
               </div>
             </div>
             
-            <Button size="lg" variant="outline" className="text-lg px-8" asChild>
+            <Button size="lg" variant="outline" className="px-4 sm:px-8 text-base sm:text-lg max-w-full" asChild>
               <a 
                 href="https://pypi.org/project/tsfm-client/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center"
+                className="inline-flex items-center whitespace-normal text-center"
               >
-                <ExternalLink className="h-5 w-5 mr-2" />
-                View Documentation & Examples
+                <ExternalLink className="h-5 w-5 mr-2 flex-shrink-0" />
+                <span className="sm:inline block">View Documentation & Examples</span>
               </a>
             </Button>
           </div>
